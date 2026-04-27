@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="OWASPTop10_4devs.esproj">
+    <Build />
+    <Deploy />
+  </Project>
+</Solution>

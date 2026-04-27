@@ -1,0 +1,2 @@
+C:\Users\Usuario\source\repos\OWASPTop10_4devs\obj\Debug\OWASPTop10_4devs.esproj.CoreCompileInputs.cache
+C:\Users\Usuario\source\repos\OWASPTop10_4devs\owasptop10\obj\Debug\OWASPTop10_4devs.esproj.CoreCompileInputs.cache
