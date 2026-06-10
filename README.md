@@ -92,6 +92,8 @@ Cada vulnerabilidad incluye:
 - [OWASP Foundation](https://owasp.org/)
 - [OWASP Cheat Sheets Series](https://cheatsheetseries.owasp.org/)
 - [OWASP Top 10](https://owasp.org/www-project-top-ten/)
+- [OWASP Mobile Top 10](https://owasp.org/www-project-mobile-top-10/)
+- [OWASP Top 10 LLM](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
 
 ## Nota
 
