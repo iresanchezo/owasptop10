@@ -58,15 +58,6 @@ Esta web de OWASP Top 10 es una herramienta educativa diseñada para desarrollad
 2. No se requieren dependencias especiales para ejecutar la aplicación
 3. Abrir `index.html` en el navegador web
 
-### Desarrollo
-
-Para desarrollo, se utiliza ESLint para mantener la calidad del código:
-
-```bash
-npm install
-npm test
-```
-
 ## Cómo usar
 
 1. Abrir la aplicación en el navegador
