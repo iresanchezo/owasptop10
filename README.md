@@ -1,6 +1,6 @@
-# OWASP Top 10 4devs
+# OWASP Top 10
 
-Una aplicación web educativa interactiva que proporciona información detallada sobre los 10 riesgos de seguridad web más críticos según OWASP.
+Una aplicación web educativa interactiva que proporciona información detallada sobre los 10 riesgos de seguridad web más críticos según OWASP para aplicaciones Web, móviles y LLM.
 
 ## Descripción
 
