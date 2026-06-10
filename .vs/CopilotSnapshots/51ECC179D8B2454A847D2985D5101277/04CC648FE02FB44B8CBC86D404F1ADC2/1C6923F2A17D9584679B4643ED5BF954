@@ -1,0 +1,64 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>OWASP Top 10</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="brand">
+      <a id="homeLink" href="#" aria-label="Home">
+        <img id="logo" src="https://owasp.org/wp-content/uploads/2019/11/OWASP_logo.png" alt="OWASP logo">
+      </a>
+      <h1>OWASP Top 10</h1>
+    </div>
+    <nav class="topnav" id="topnav">
+      <button class="nav-btn active" data-target="top10">OWASP Top 10</button>
+      <button class="nav-btn" data-target="mobile">OWASP Top 10 Mobile</button>
+      <button class="nav-btn" data-target="llm">OWASP Top 10 LLM</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <aside id="leftSidebar" class="sidebar left collapsed">
+	  <div class="sidebar-header">
+		<h2 id="sidebarTitle">Categorías</h2>
+	  </div>
+	  <div class="sidebar-body">
+		<ul id="categoryList" class="category-list">
+		</ul>
+	  </div>
+	</aside>
+
+    <!-- Edge toggle placed between sidebars and main (arrows in margins) -->
+	<!-- <button id="edgeLeftToggle" class="edge-toggle left" aria-label="Toggle left sidebar">◀</button> -->
+	<!-- <button id="edgeRightToggle" class="edge-toggle right" aria-label="Toggle right sidebar">▶</button> -->
+    <section id="mainContent" class="main">
+    </section>
+
+	<button id="edgeRightToggle" class="edge-toggle right" aria-label="Toggle right sidebar">▶</button>
+    <aside id="rightSidebar" class="sidebar right collapsed">
+	  <div class="sidebar-header">
+		<h2>CWEs</h2>
+	  </div>
+	  <div class="sidebar-body">
+		<ul id="cweList" class="cwe-list">
+		</ul>
+	  </div>
+	</aside>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="#" id="initiativeLink">OWASP Top10</a>
+      <a href="https://cheatsheetseries.owasp.org/" target="_blank" rel="noopener">OWASP Cheatsheets</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+    <p class="copy">Proyecto educativo - Contenido orientado a desarrolladores junior.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

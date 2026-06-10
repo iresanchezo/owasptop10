@@ -1,0 +1,82 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\irene\\Documents\\Visual Studio Projects\\OWASPTop10\\OWASPTop10\\owasptop10\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{684B0A38-8228-8A4D-C547-5598B2893155}|OWASPTop10_4devs.esproj|c:\\users\\irene\\documents\\visual studio projects\\owasptop10\\owasptop10\\owasptop10\\script.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{684B0A38-8228-8A4D-C547-5598B2893155}|OWASPTop10_4devs.esproj|solutionrelative:script.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{684B0A38-8228-8A4D-C547-5598B2893155}|OWASPTop10_4devs.esproj|c:\\users\\irene\\documents\\visual studio projects\\owasptop10\\owasptop10\\owasptop10\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{684B0A38-8228-8A4D-C547-5598B2893155}|OWASPTop10_4devs.esproj|solutionrelative:index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{684B0A38-8228-8A4D-C547-5598B2893155}|OWASPTop10_4devs.esproj|c:\\users\\irene\\documents\\visual studio projects\\owasptop10\\owasptop10\\owasptop10\\styles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{684B0A38-8228-8A4D-C547-5598B2893155}|OWASPTop10_4devs.esproj|solutionrelative:styles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{c9c0ae26-aa77-11d2-b3f0-0000f87570ee}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "styles.css",
+              "DocumentMoniker": "C:\\Users\\irene\\Documents\\Visual Studio Projects\\OWASPTop10\\OWASPTop10\\owasptop10\\styles.css",
+              "RelativeDocumentMoniker": "styles.css",
+              "ToolTip": "C:\\Users\\irene\\Documents\\Visual Studio Projects\\OWASPTop10\\OWASPTop10\\owasptop10\\styles.css",
+              "RelativeToolTip": "styles.css",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAAABMAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-04-27T13:45:39.338Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "index.html",
+              "DocumentMoniker": "C:\\Users\\irene\\Documents\\Visual Studio Projects\\OWASPTop10\\OWASPTop10\\owasptop10\\index.html",
+              "RelativeDocumentMoniker": "index.html",
+              "ToolTip": "C:\\Users\\irene\\Documents\\Visual Studio Projects\\OWASPTop10\\OWASPTop10\\owasptop10\\index.html",
+              "RelativeToolTip": "index.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2026-04-27T13:15:55.255Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "script.js",
+              "DocumentMoniker": "C:\\Users\\irene\\Documents\\Visual Studio Projects\\OWASPTop10\\OWASPTop10\\owasptop10\\script.js",
+              "RelativeDocumentMoniker": "script.js",
+              "ToolTip": "C:\\Users\\irene\\Documents\\Visual Studio Projects\\OWASPTop10\\OWASPTop10\\owasptop10\\script.js",
+              "RelativeToolTip": "script.js",
+              "ViewState": "AgIAADUBAAAAAAAAAAAuwD8BAACnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-04-27T13:05:49.704Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

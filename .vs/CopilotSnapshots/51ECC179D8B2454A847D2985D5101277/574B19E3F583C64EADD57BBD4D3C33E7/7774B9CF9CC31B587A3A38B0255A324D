@@ -1,4 +1,4 @@
-/*
+﻿/*
   styles.css
   Estilos base para OWASP Top 10 4devs
   Responsive, flexbox, animaciones sidebars
@@ -48,7 +48,7 @@ body {
 }
 
 #logo {
-  height: 46px; /* aumentado 15% */
+  height: 40px;
   width: auto;
   cursor: pointer;
 }
@@ -187,48 +187,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  overflow-y: auto;
-  max-height: calc(100vh - var(--header-height) - var(--footer-height));
-  align-items: center;
-  text-align: center;
-}
-
-.main > * {
-  width: 100%;
-  max-width: 900px;
-}
-
-.detail-blocks {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-  width: 100%;
-}
-
-.detail-block {
-  flex: 1 1 280px;
-  max-width: 520px;
-  width: 100%;
-  background: #fffbe6;
-  border-left: 4px solid #f7b500;
-  padding: 1rem;
-  text-align: left;
-  border-radius: 8px;
-}
-
-.detail-block--green {
-  background: #e7f8ec;
-  border-left-color: #2f8a3f;
-}
-
-.detail-block h3 {
-  margin-top: 0;
-}
-
-.detail-block ul {
-  margin: 0;
-  padding-left: 1.2em;
 }
 
 .footer {
@@ -270,17 +228,6 @@ body {
   font-weight: 700;
 }
 
-.main table {
-  width: 100%;
-  max-width: none;
-  min-width: 0;
-  border-collapse: collapse;
-}
-
-.main table th, .main table td {
-  padding: 0.5rem 1rem;
-}
-
 @media (max-width: 900px) {
   .container {
     flex-direction: column;
@@ -315,120 +262,3 @@ body {
     gap: 0.3rem;
   }
 }
-
-/* Placeholder image shown by default when no category is selected */
-.main .placeholder {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 1rem 0;
-  flex: 1 1 auto; /* occupy available space so content centers vertically */
-  box-sizing: border-box;
-}
-.main .placeholder-image {
-  max-width: 69%; /* default */
-  max-height: 391px;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  display: block;
-}
-
-@media (max-width: 900px) {
-  .main .placeholder-image {
-    max-width: 92%; /* 80% * 1.15 */
-    max-height: 299px; /* 260px * 1.15 */
-  }
-}
-
-@media (max-width: 420px) {
-  .main .placeholder-image {
-    max-width: 100%; /* cap at 100% */
-    max-height: 230px; /* 200px * 1.15 */
-  }
-}
-
-/* Mobile section: aumentar placeholder un 15% adicional */
-.main .placeholder.placeholder--mobile .placeholder-image {
-  max-width: 80%; /* ~69% * 1.15 -> 79.35% rounded */
-  max-height: 450px; /* 391px * 1.15 -> ~450px */
-}
-
-/* Top10 and LLM: increase 25% from baseline */
-.main .placeholder.placeholder--top10 .placeholder-image,
-.main .placeholder.placeholder--llm .placeholder-image {
-  max-width: 75%; /* 60% * 1.25 */
-  max-height: 425px; /* 340px * 1.25 */
-}
-
-@media (max-width: 900px) {
-  .main .placeholder.placeholder--top10 .placeholder-image,
-  .main .placeholder.placeholder--llm .placeholder-image {
-    max-width: 100%; /* cap */
-    max-height: 325px; /* 260px * 1.25 */
-  }
-}
-
-@media (max-width: 420px) {
-  .main .placeholder.placeholder--top10 .placeholder-image,
-  .main .placeholder.placeholder--llm .placeholder-image {
-    max-width: 100%;
-    max-height: 250px; /* 200px * 1.25 */
-  }
-}
-
-/* Mobile: increase 40% from baseline */
-.main .placeholder.placeholder--mobile .placeholder-image {
-  max-width: 84%; /* 60% * 1.4 */
-  max-height: 476px; /* 340px * 1.4 */
-}
-
-@media (max-width: 900px) {
-  .main .placeholder.placeholder--mobile .placeholder-image {
-    max-width: 100%;
-    max-height: 364px; /* 260px * 1.4 */
-  }
-}
-
-@media (max-width: 420px) {
-  .main .placeholder.placeholder--mobile .placeholder-image {
-    max-width: 100%;
-    max-height: 280px; /* 200px * 1.4 */
-  }
-}
-
-@media (max-width: 900px) {
-  .main .placeholder.placeholder--mobile .placeholder-image {
-    max-width: 100%; /* cap at 100% */
-    max-height: 344px; /* 299px * 1.15 -> ~344px */
-  }
-}
-
-@media (max-width: 420px) {
-  .main .placeholder.placeholder--mobile .placeholder-image {
-    max-width: 100%;
-    max-height: 265px; /* 230px * 1.15 -> ~265px */
-  }
-}
-
-/* Forzar que las imágenes de placeholder ocupen el 75% del espacio del contenedor */
-.main .placeholder .placeholder-image,
-.main .placeholder.placeholder--top10 .placeholder-image,
-.main .placeholder.placeholder--llm .placeholder-image,
-.main .placeholder.placeholder--mobile .placeholder-image {
-  width: 75% !important;
-  max-width: 75% !important;
-  height: auto !important;
-  max-height: none !important;
-}
-
-/* Nota de Ejemplos: fondo rojo pastel suave */
-.detail-block--examples {
-  background-color: #ffe6e6;
-  border-left-color: #ff8b8b;
-  padding: 1rem;
-  border-radius: 8px;
-}
-
-

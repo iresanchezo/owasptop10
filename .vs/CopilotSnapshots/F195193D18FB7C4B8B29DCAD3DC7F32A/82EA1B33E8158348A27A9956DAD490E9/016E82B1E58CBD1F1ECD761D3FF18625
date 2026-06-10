@@ -1,0 +1,318 @@
+﻿// script.js
+// Lógica de navegación y renderizado dinámico para OWASP Top 10 4devs
+
+// Datos OWASP Top 10 normal (solo 2 ejemplos)
+const owaspTop10 = {
+  categories: [
+    {
+      id: 'A01',
+      name: 'Broken Access Control',
+      description: 'Las restricciones sobre lo que los usuarios pueden hacer no siempre se aplican correctamente. Los atacantes pueden explotar estas fallas para acceder a funcionalidades y/o datos no autorizados.',
+      risk: 'Alto',
+      impact: 'Acceso no autorizado a datos o funciones',
+      likelihood: 'Alta',
+      cwes: ["CWE-284", "CWE-285"]
+    },
+    {
+      id: 'A02',
+      name: 'Cryptographic Failures',
+      description: 'Fallas relacionadas con la criptografía, como la exposición de datos sensibles debido a una protección inadecuada.',
+      risk: 'Alto',
+      impact: 'Exposición de datos sensibles',
+      likelihood: 'Media',
+      cwes: ["CWE-311", "CWE-319"]
+    }
+  ],
+  cwes: {
+    "CWE-284": "Improper Access Control",
+    "CWE-285": "Improper Authorization",
+    "CWE-311": "Missing Encryption of Sensitive Data",
+    "CWE-319": "Cleartext Transmission of Sensitive Information"
+  }
+};
+
+// Datos OWASP Top 10 Mobile (vacío)
+const owaspMobile = {
+  categories: [
+    {
+      id: 'M01',
+      name: 'Uso incorrecto de la plataforma',
+      description: 'Cuando una app móvil no utiliza bien las funciones del sistema operativo, como permisos o almacenamiento, puede dejar la puerta abierta a problemas de seguridad.',
+      risk: 'Alto',
+      impact: 'Tus datos o acciones pueden quedar expuestos a otras apps o usuarios.',
+      likelihood: 'Alta',
+      cwes: ["CWE-269"]
+    },
+    {
+      id: 'M02',
+      name: 'Almacenamiento inseguro de datos',
+      description: 'Si una app guarda información sensible sin protección, otras apps o personas pueden acceder a ella fácilmente.',
+      risk: 'Alto',
+      impact: 'Alguien podría robar información privada como contraseñas o mensajes.',
+      likelihood: 'Media',
+      cwes: ["CWE-312"]
+    }
+  ],
+  cwes: {
+    "CWE-269": "Gestión incorrecta de privilegios",
+    "CWE-312": "Almacenamiento sin cifrar de información sensible"
+  }
+};
+
+// Datos OWASP Top 10 LLM (vacío)
+const owaspLLM = {
+  categories: [
+    {
+      id: 'LLM01',
+      name: 'Inyección de instrucciones',
+      description: 'Si alguien logra engañar al sistema para que haga cosas que no debería, modificando lo que le piden al asistente.',
+      risk: 'Alto',
+      impact: 'El sistema puede revelar información o comportarse de forma inesperada.',
+      likelihood: 'Alta',
+      cwes: ["CWE-20", "CWE-74"]
+    },
+    {
+      id: 'LLM02',
+      name: 'Fuga de datos',
+      description: 'El sistema puede dar información privada o sensible por error en sus respuestas.',
+      risk: 'Alto',
+      impact: 'Se puede filtrar información confidencial a quien no debe.',
+      likelihood: 'Media',
+      cwes: ["CWE-200"]
+    }
+  ],
+  cwes: {
+    "CWE-20": "Validación incorrecta de datos de entrada",
+    "CWE-74": "Neutralización incorrecta de elementos especiales en la salida",
+    "CWE-200": "Exposición de información sensible a un actor no autorizado"
+  }
+};
+
+// Estado global
+let currentSection = 'home'; // home | top10 | mobile | llm
+let selectedCategory = null;
+
+// Elementos
+const navBtns = document.querySelectorAll('.nav-btn');
+const leftSidebar = document.getElementById('leftSidebar');
+const rightSidebar = document.getElementById('rightSidebar');
+const mainContent = document.getElementById('mainContent');
+const edgeLeftToggle = document.getElementById('edgeLeftToggle');
+const edgeRightToggle = document.getElementById('edgeRightToggle');
+const homeLink = document.getElementById('homeLink');
+const homeTitleLink = document.getElementById('homeTitleLink');
+const categoryList = document.getElementById('categoryList');
+const cweList = document.getElementById('cweList');
+const sidebarTitle = document.getElementById('sidebarTitle');
+
+// Navegación principal
+navBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    navBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const target = btn.dataset.target;
+    if (target === 'top10' || target === 'mobile') {
+      renderSection(target);
+    } else if (target === 'llm') {
+      renderSection('llm');
+    } else if (target === '#' || target === '' || target === 'home') {
+      renderSection('home');
+    }
+  });
+});
+
+// Logo/Home
+homeLink.addEventListener('click', (e) => {
+  e.preventDefault();
+  renderSection('home');
+});
+homeTitleLink.addEventListener('click', (e) => {
+  e.preventDefault();
+  renderSection('home');
+});
+
+// Renderizado de secciones
+function renderSection(section) {
+  currentSection = section;
+  selectedCategory = null;
+  // Home
+  if (section === 'home') {
+    leftSidebar.style.display = 'none';
+    rightSidebar.style.display = 'none';
+    mainContent.innerHTML = `
+      <div style="display:flex;flex-direction:column;align-items:center;gap:1.5rem;">
+        <img src="https://owasp.org/wp-content/uploads/2019/11/OWASP_logo.png" alt="OWASP logo" style="max-width:180px;">
+        <h2>¿Qué es OWASP?</h2>
+        <p style="max-width:600px;text-align:center;">OWASP (Open Web Application Security Project) es una comunidad global dedicada a mejorar la seguridad del software. El OWASP Top 10 es un ranking de los riesgos de seguridad más críticos en aplicaciones, orientado a concienciar y educar a desarrolladores y empresas.</p>
+      </div>
+    `;
+    navBtns.forEach(b => b.classList.remove('active'));
+    navBtns[0].classList.add('active');
+    cweList.innerHTML = '';
+    return;
+  }
+  // Mostrar sidebars solo en secciones
+
+  if (section === 'llm') {
+    sidebarTitle.textContent = 'Categorías';
+    renderCategoryList();
+    mainContent.innerHTML = `<div style="text-align:center;color:#888;">Selecciona una categoría para ver detalles.</div>`;
+    cweList.innerHTML = '';
+  } else if (section === 'top10') {
+    sidebarTitle.textContent = 'Categorías';
+    renderCategoryListTop10();
+    mainContent.innerHTML = `<div style="text-align:center;color:#888;">Selecciona una categoría para ver detalles.</div>`;
+    cweList.innerHTML = '';
+  } else if (section === 'mobile') {
+    sidebarTitle.textContent = 'Categorías';
+    renderCategoryListMobile();
+    mainContent.innerHTML = `<div style="text-align:center;color:#888;">Selecciona una categoría para ver detalles.</div>`;
+    cweList.innerHTML = '';
+  } else {
+    sidebarTitle.textContent = 'Categorías';
+    categoryList.innerHTML = '<li style="color:#aaa;">(Próximamente)</li>';
+    mainContent.innerHTML = `<div style="text-align:center;color:#888;">Sección en construcción.</div>`;
+    cweList.innerHTML = '';
+  }
+}
+
+function renderCategoryList() {
+  categoryList.innerHTML = '';
+  owaspLLM.categories.forEach(cat => {
+    const li = document.createElement('li');
+    li.textContent = `${cat.id} - ${cat.name}`;
+    li.addEventListener('click', () => {
+      selectCategory(cat.id);
+    });
+    if (selectedCategory && selectedCategory.id === cat.id) {
+      li.classList.add('active');
+    }
+    categoryList.appendChild(li);
+  });
+}
+
+function renderCategoryListTop10() {
+  categoryList.innerHTML = '';
+  owaspTop10.categories.forEach(cat => {
+    const li = document.createElement('li');
+    li.textContent = `${cat.id} - ${cat.name}`;
+    li.style.cursor = 'pointer';
+    li.addEventListener('click', () => {
+      selectCategoryTop10(cat.id);
+    });
+    if (selectedCategory && selectedCategory.id === cat.id) {
+      li.classList.add('active');
+    }
+    categoryList.appendChild(li);
+  });
+}
+
+function renderCategoryListMobile() {
+  categoryList.innerHTML = '';
+  owaspMobile.categories.forEach(cat => {
+    const li = document.createElement('li');
+    li.textContent = `${cat.id} - ${cat.name}`;
+    li.addEventListener('click', () => {
+      selectCategoryMobile(cat.id);
+    });
+    if (selectedCategory && selectedCategory.id === cat.id) {
+      li.classList.add('active');
+    }
+    categoryList.appendChild(li);
+  });
+}
+
+function selectCategory(catId) {
+  selectedCategory = owaspLLM.categories.find(c => c.id === catId);
+  renderCategoryList();
+  renderCategoryDetail();
+  renderCWEList();
+}
+
+function selectCategoryTop10(catId) {
+  selectedCategory = owaspTop10.categories.find(c => c.id === catId);
+  renderCategoryListTop10();
+  renderCategoryDetailTop10();
+  renderCWEListTop10();
+}
+
+function selectCategoryMobile(catId) {
+  selectedCategory = owaspMobile.categories.find(c => c.id === catId);
+  renderCategoryListMobile();
+  renderCategoryDetailMobile();
+  renderCWEMobile();
+}
+
+function renderCategoryDetail() {
+  if (!selectedCategory) return;
+  mainContent.innerHTML = `
+    <h2>${selectedCategory.id} - ${selectedCategory.name}</h2>
+    <p>${selectedCategory.description}</p>
+    <table style="margin:1rem 0;min-width:260px;max-width:400px;border-collapse:collapse;">
+      <thead><tr style="background:#f0f4fa;"><th>Riesgo</th><th>Impacto</th><th>Probabilidad</th></tr></thead>
+      <tbody><tr style="text-align:center;"><td>${selectedCategory.risk}</td><td>${selectedCategory.impact}</td><td>${selectedCategory.likelihood}</td></tr></tbody>
+    </table>
+  `;
+}
+
+function renderCategoryDetailTop10() {
+  if (!selectedCategory) return;
+  mainContent.innerHTML = `
+    <h2>${selectedCategory.id} - ${selectedCategory.name}</h2>
+    <p>${selectedCategory.description}</p>
+    <table style="margin:1rem 0;min-width:260px;max-width:400px;border-collapse:collapse;">
+      <thead><tr style="background:#f0f4fa;"><th>Riesgo</th><th>Impacto</th><th>Probabilidad</th></tr></thead>
+      <tbody><tr style="text-align:center;"><td>${selectedCategory.risk}</td><td>${selectedCategory.impact}</td><td>${selectedCategory.likelihood}</td></tr></tbody>
+    </table>
+  `;
+}
+
+function renderCategoryDetailMobile() {
+  if (!selectedCategory) return;
+  mainContent.innerHTML = `
+    <h2>${selectedCategory.id} - ${selectedCategory.name}</h2>
+    <p>${selectedCategory.description}</p>
+    <table style="margin:1rem 0;min-width:260px;max-width:400px;border-collapse:collapse;">
+      <thead><tr style="background:#f0f4fa;"><th>Riesgo</th><th>Impacto</th><th>Probabilidad</th></tr></thead>
+      <tbody><tr style="text-align:center;"><td>${selectedCategory.risk}</td><td>${selectedCategory.impact}</td><td>${selectedCategory.likelihood}</td></tr></tbody>
+    </table>
+  `;
+}
+
+function renderCWEList() {
+  cweList.innerHTML = '';
+  if (!selectedCategory) return;
+  selectedCategory.cwes.forEach(cwe => {
+    const li = document.createElement('li');
+    li.textContent = `${cwe} - ${owaspLLM.cwes[cwe] || ''}`;
+    cweList.appendChild(li);
+  });
+}
+
+function renderCWEListTop10() {
+  cweList.innerHTML = '';
+  if (!selectedCategory) return;
+  selectedCategory.cwes.forEach(cwe => {
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    a.href = `https://cwe.mitre.org/data/definitions/${cwe.replace(/CWE-/,'')}.html`;
+    a.textContent = `${cwe} - ${owaspTop10.cwes[cwe] || ''}`;
+    a.target = '_blank';
+    a.rel = 'noopener';
+    li.appendChild(a);
+    cweList.appendChild(li);
+  });
+}
+
+function renderCWEMobile() {
+  cweList.innerHTML = '';
+  if (!selectedCategory) return;
+  selectedCategory.cwes.forEach(cwe => {
+    const li = document.createElement('li');
+    li.textContent = `${cwe} - ${owaspMobile.cwes[cwe] || ''}`;
+    cweList.appendChild(li);
+  });
+}
+
+// Inicialización
+renderSection('home');

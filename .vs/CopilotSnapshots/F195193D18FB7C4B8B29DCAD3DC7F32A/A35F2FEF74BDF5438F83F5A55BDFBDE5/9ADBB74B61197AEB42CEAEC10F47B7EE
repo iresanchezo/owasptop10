@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="es">
 <head>
   <meta charset="utf-8" />
@@ -54,11 +54,11 @@
 
   <footer class="footer">
     <div class="footer-links">
-      <a href="https://owasp.org/" id="">OWASP Foundation</a>
+      <a href="#" id="initiativeLink">OWASP Top10 4devs</a>
       <a href="https://cheatsheetseries.owasp.org/" target="_blank" rel="noopener">OWASP Cheatsheets</a>
-      <a href="#" id="privacyLink">Política de privacidad</a>
+      <a href="#">Privacy Policy</a>
     </div>
-    <p class="copy">Proyecto educativo</p>
+    <p class="copy">Proyecto educativo - Contenido orientado a desarrolladores junior.</p>
   </footer>
 
   <script src="script.js"></script>
