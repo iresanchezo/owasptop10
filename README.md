@@ -4,7 +4,7 @@ Una aplicación web educativa interactiva que proporciona información detallada
 
 ## Descripción
 
-OWASP Top 10 4devs es una herramienta educativa diseñada para desarrolladores, estudiantes y profesionales de ciberseguridad. Permite explorar y comprender las vulnerabilidades de seguridad web más comunes, sus impactos, ejemplos prácticos y soluciones recomendadas.
+Esta web de OWASP Top 10 es una herramienta educativa diseñada para desarrolladores, estudiantes y profesionales de ciberseguridad con fines educativos y formativos. Permite explorar y comprender las vulnerabilidades de seguridad web más comunes, sus impactos, ejemplos prácticos y soluciones recomendadas desde ejemplos sencillos.
 
 ## Características principales
 
