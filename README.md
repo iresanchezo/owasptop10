@@ -87,10 +87,6 @@ Cada vulnerabilidad incluye:
 - **Soluciones:** Medidas de remediación y mejores prácticas
 - **Referencias CWE:** Enlaces a debilidades comunes asociadas
 
-## Licencia
-
-ISC
-
 ## Recursos y enlaces
 
 - [OWASP Foundation](https://owasp.org/)
