@@ -72,12 +72,14 @@ Este proyecto es una herramienta formativa enfocada en desarrolladores, estudian
 3. Seleccione una categoría en la barra lateral para ver su contenido.
 4. Utilice el campo de búsqueda para filtrar vulnerabilidades.
 5. Active el modo oscuro con el botón del encabezado.
-6. Revise los CWEs relacionados en el panel derecho.8. Acceda a las secciones Quiz y Lab para practicar con preguntas y ejercicios interactivos.
+6. Revise los CWEs relacionados en el panel derecho.
+7. Acceda a las secciones Quiz y Lab para practicar con preguntas y ejercicios interactivos.
 
 ## Quiz y Lab
 
-- **Quiz OWASP:** seleciona nivel Junior, Mid o Senior para responder 10 preguntas de seguridad. El sistema ofrece retroalimentación inmediata, muestra resultados y desbloquea niveles superiores si alcanzas el umbral mínimo.
+- **Quiz OWASP:** selecciona nivel Junior, Mid o Senior para responder 10 preguntas de seguridad. El sistema ofrece retroalimentación inmediata, muestra resultados y desbloquea niveles superiores si alcanzas el umbral mínimo.
 - **Lab de Seguridad:** elige un nivel y revisa fragmentos de código reales. Marca las líneas que crees inseguras, utiliza pistas y comprueba tus respuestas con una evaluación automática. El progreso de la sesión se guarda y permite avanzar según aciertos.
+
 ## Contenido educativo
 
 Cada sección de vulnerabilidad puede incluir:
