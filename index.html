@@ -7,38 +7,49 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="header">
     <div class="brand">
-        <a id="homeLink" href="#" aria-label="Home">
-            <img id="logo" src="resources/owasp-logo.png" alt="OWASP logo">
-        </a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menú" aria-expanded="false">&#9776;</button>
+      <a id="homeLink" href="#" aria-label="Home">
+        <img id="logo" src="resources/owasp-logo.png" alt="OWASP logo">
+      </a>
       <a id="homeTitleLink" href="#" style="text-decoration:none;color:inherit;">
         <h1 class="owasp-title" style="cursor:pointer;">OWASP Top 10</h1>
       </a>
     </div>
     <nav class="topnav" id="topnav">
       <button class="nav-btn active" data-target="#">Home</button>
-      <button class="nav-btn active" data-target="top10">OWASP Top 10</button>
+      <button class="nav-btn" data-target="top10">OWASP Top 10</button>
       <button class="nav-btn" data-target="mobile">OWASP Top 10 Mobile</button>
       <button class="nav-btn" data-target="llm">OWASP Top 10 LLM</button>
+      <button class="nav-btn" data-target="quiz">&#127299; Quiz</button>
+      <button class="nav-btn" data-target="lab">&#128300; Lab</button>
+      <button class="nav-btn" data-target="progress">&#128202; Progreso</button>
     </nav>
+    <div class="header-actions">
+      <button class="dark-toggle" id="darkToggle" aria-label="Cambiar modo oscuro" title="Modo oscuro">&#9790;</button>
+    </div>
   </header>
 
   <main class="container">
     <aside id="leftSidebar" class="sidebar left">
       <div class="sidebar-header">
         <h2 id="sidebarTitle">Categorías</h2>
+        <div class="search-box">
+          <input type="search" id="searchInput" placeholder="Buscar..." aria-label="Buscar vulnerabilidad">
+        </div>
       </div>
       <div class="sidebar-body">
-        <ul id="categoryList" class="category-list">
+        <ul id="categoryList" class="category-list" role="listbox" aria-label="Lista de categorías">
         </ul>
       </div>
     </aside>
 
-    <section id="mainContent" class="main">
+    <section id="mainContent" class="main" aria-live="polite">
     </section>
 
     <aside id="rightSidebar" class="sidebar right">
@@ -52,13 +63,16 @@
     </aside>
   </main>
 
+  <!-- Overlay for mobile sidebar -->
+  <div id="sidebarOverlay" class="sidebar-overlay"></div>
+
   <footer class="footer">
     <div class="footer-links">
-      <a href="https://owasp.org/" id="">OWASP Foundation</a>
+      <a href="https://owasp.org/" target="_blank" rel="noopener">OWASP Foundation</a>
       <a href="https://cheatsheetseries.owasp.org/" target="_blank" rel="noopener">OWASP Cheatsheets</a>
       <a href="#" id="privacyLink">Política de privacidad</a>
     </div>
-    <p class="copy">Proyecto educativo</p>
+    <p class="copy">Proyecto educativo &mdash; <span id="progressText"></span></p>
   </footer>
 
   <script src="script.js"></script>
