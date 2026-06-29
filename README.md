@@ -1,91 +1,97 @@
 # OWASP Top 10
 
-Una aplicación web educativa interactiva que proporciona información detallada sobre los 10 riesgos de seguridad web más críticos según OWASP para aplicaciones Web, móviles y LLM.
+Aplicación web educativa e interactiva que explica los riesgos de seguridad más importantes de OWASP para aplicaciones web, móviles y modelos de lenguaje.
 
 ## Descripción
 
-Esta web de OWASP Top 10 es una herramienta educativa diseñada para desarrolladores, estudiantes y profesionales de ciberseguridad con fines educativos y formativos. Permite explorar y comprender las vulnerabilidades de seguridad web más comunes, sus impactos, ejemplos prácticos y soluciones recomendadas desde ejemplos sencillos.
+Este proyecto es una herramienta formativa enfocada en desarrolladores, estudiantes y profesionales de ciberseguridad. Ofrece explicaciones claras de las vulnerabilidades, ejemplos de explotación, riesgos asociados y recomendaciones de mitigación.
 
 ## Características principales
 
-- **Múltiples categorías de seguridad:**
-  - OWASP Top 10 (Riesgos web generales)
-  - OWASP Top 10 Mobile (Riesgos específicos para aplicaciones móviles)
-  - OWASP Top 10 LLM (Riesgos relacionados con modelos de lenguaje)
-
-- **Información detallada por vulnerabilidad:**
-  - Descripción clara y comprensible
-  - Ejemplos reales de explotación
-  - Evaluación de riesgo (probabilidad e impacto)
-  - Exposición/consecuencias potenciales
-  - Soluciones y mejores prácticas de remediación
-  - Referencias a CWE (Common Weakness Enumeration)
-
-- **Interfaz intuitiva:**
-  - Navegación lateral izquierda con categorías
-  - Panel derecho con referencias CWE relacionadas
-  - Diseño responsivo y amigable
-  - Contenido principal con toda la información
-
-- **Diseño educativo:**
-  - Lenguaje claro y accesible
-  - Estructura organizada y fácil de navegar
-  - Enlaces a recursos oficiales de OWASP
+- **Categorías cubiertas:**
+  - OWASP Top 10 Web
+  - OWASP Top 10 Mobile
+  - OWASP Top 10 LLM
+- **Contenidos educativos:**
+  - Descripción de la vulnerabilidad
+  - Ejemplos prácticos de explotación
+  - Evaluación de riesgo (impacto y probabilidad)
+  - Exposición y consecuencias potenciales
+  - Soluciones y buenas prácticas
+  - Referencias CWE relevantes
+- **Funciones interactivas:**
+  - Menú de navegación superior con secciones Home, OWASP Top 10, Mobile, LLM, Quiz, Lab y Progreso
+  - Lista lateral de categorías y búsqueda en tiempo real
+  - Panel derecho con CWE relacionados
+  - Modo oscuro activable
+  - Seguimiento de progreso de lectura
+- **Diseño responsivo:**
+  - Interfaz adaptable a pantallas grandes y móviles
+  - Sidebar móvil con overlay y accesibilidad mejorada
 
 ## Tecnologías utilizadas
 
-- **Frontend:** HTML5, CSS3, JavaScript (Vanilla)
-- **Estilos:** CSS personalizado con variables CSS y flexbox
-- **Arquitectura:** Single Page Application (SPA)
-- **Fuentes:** Google Fonts (Montserrat Alternates)
+- HTML5
+- CSS3
+- JavaScript vanilla
+- Google Fonts (Montserrat Alternates)
+- Tabler Icons (CDN)
 
 ## Estructura del proyecto
 
 ```
 ├── index.html          # Página principal HTML
-├── script.js           # Lógica de navegación y renderizado dinámico
-├── app.js              # Archivo principal de la aplicación
-├── styles.css          # Estilos CSS de la aplicación
+├── script.js           # Lógica principal de la aplicación
+├── styles.css          # Estilos CSS
+├── app.js              # Archivo auxiliar / punto de entrada del paquete
 ├── package.json        # Configuración del proyecto Node.js
 ├── eslint.config.js    # Configuración de ESLint
-├── resources/          # Recursos estáticos (logos, imágenes)
-└── README.md           # Este archivo
+├── resources/          # Imágenes y recursos estáticos
+└── README.md           # Documentación del proyecto
 ```
 
-## Instalación
+## Requisitos
 
-1. Clonar o descargar el repositorio
-2. No se requieren dependencias especiales para ejecutar la aplicación
-3. Abrir `index.html` en el navegador web
+- Navegador moderno con JavaScript habilitado
+- Conexión a internet para cargar fuentes y el paquete de iconos desde CDN
 
-## Cómo usar
+## Instalación y uso
 
-1. Abrir la aplicación en el navegador
-2. Seleccionar una categoría desde el menú superior (Home, OWASP Top 10, Mobile, LLM)
-3. Explorar las vulnerabilidades desde la lista lateral
-4. Leer la información detallada en el panel central
-5. Consultar los CWEs relacionados en el panel derecho
+1. Clonar o descargar el repositorio.
+2. Abrir `index.html` directamente en el navegador.
+3. No se requiere servidor ni dependencias adicionales para ejecutar la aplicación.
+
+> Si desea usar ESLint localmente, instale las dependencias con `npm install`.
+
+## Uso de la aplicación
+
+1. Abra la aplicación en el navegador.
+2. Use el menú superior para cambiar entre Home, OWASP Top 10, Mobile, LLM, Quiz, Lab y Progreso.
+3. Seleccione una categoría en la barra lateral para ver su contenido.
+4. Utilice el campo de búsqueda para filtrar vulnerabilidades.
+5. Active el modo oscuro con el botón del encabezado.
+6. Revise los CWEs relacionados en el panel derecho.
 
 ## Contenido educativo
 
-Cada vulnerabilidad incluye:
+Cada sección de vulnerabilidad puede incluir:
 
-- **ID y Nombre:** Identificador único y nombre de la vulnerabilidad
-- **Descripción:** Explicación clara del riesgo de seguridad
-- **Ejemplos:** Casos prácticos de explotación
-- **Riesgo:** Evaluación de probabilidad e impacto
-- **Exposición:** Posibles consecuencias del ataque
-- **Soluciones:** Medidas de remediación y mejores prácticas
-- **Referencias CWE:** Enlaces a debilidades comunes asociadas
+- **ID y nombre**
+- **Descripción**
+- **Ejemplos de explotación**
+- **Riesgo e impacto**
+- **Exposición/consecuencias**
+- **Soluciones y mitigaciones**
+- **Referencias CWE**
 
-## Recursos y enlaces
+## Recursos útiles
 
 - [OWASP Foundation](https://owasp.org/)
-- [OWASP Cheat Sheets Series](https://cheatsheetseries.owasp.org/)
+- [OWASP Cheat Sheet Series](https://cheatsheetseries.owasp.org/)
 - [OWASP Top 10](https://owasp.org/www-project-top-ten/)
 - [OWASP Mobile Top 10](https://owasp.org/www-project-mobile-top-10/)
 - [OWASP Top 10 LLM](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
 
 ## Nota
 
-Este es un proyecto educativo diseñado para mejorar la conciencia sobre seguridad web. Se recomienda usar la información aquí proporcionada como base para aprender más sobre seguridad y consultar recursos oficiales de OWASP.
+Este proyecto es exclusivamente educativo y busca fomentar la conciencia en seguridad. Use la información como punto de partida y consulte las fuentes oficiales de OWASP para profundizar.
